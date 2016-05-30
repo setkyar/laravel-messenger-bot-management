@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
+	// return Messenger::hello();
+
     return view('welcome');
+});
+
+Route::get('/test', function() {
+	return Messenger::hello();
 });

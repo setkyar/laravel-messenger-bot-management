@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c284a9c122da36c99a8b6597bdce7aa6",
-    "content-hash": "8b1485987e7c5949da82435d403e52e8",
+    "hash": "95867e57edd9c4866236bba40ae4a62b",
+    "content-hash": "25f554eedd21de12e486a6d3a9ed225d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -785,6 +785,45 @@
                 "random"
             ],
             "time": "2016-03-18 20:34:03"
+        },
+        {
+            "name": "pimax/fb-messenger-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pimax/fb-messenger-php.git",
+                "reference": "96094a371dc7b4604256103adb0e76d35df023f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pimax/fb-messenger-php/zipball/96094a371dc7b4604256103adb0e76d35df023f9",
+                "reference": "96094a371dc7b4604256103adb0e76d35df023f9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pimax\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Max Pinyugin",
+                    "email": "m.pinyugin@gmail.com",
+                    "homepage": "http://russian-developers.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": " Facebook Messenger Bot PHP API",
+            "homepage": "https://github.com/pimax/fb-messenger-php",
+            "time": "2016-05-26 18:14:47"
         },
         {
             "name": "psr/log",
@@ -3006,7 +3045,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "pimax/fb-messenger-php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
