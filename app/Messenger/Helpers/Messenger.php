@@ -1,5 +1,6 @@
 <?php namespace App\Messenger\Helpers;
 
+use App\Answer;
 use pimax\FbBotApp;
 use pimax\Messages\Message;
 use pimax\Messages\ImageMessage;
@@ -50,13 +51,13 @@ class Messenger
 		            }
 
 		            // Handle command
-		            $bot_answer = Answers::where('command', '=', strtolower($command))->first();
+		            $bot_answer = Answer::where('command', '=', strtolower($command))->first();
 
 		            if ($bot_answer) {
-		            	$bot->send(new Message($message['sender']['id'], $bot_answer->answer));
+		            	$this->bot->send(new Message($message['sender']['id'], $bot_answer->answer));
 		            } else {
 		            	//Default
-		            	$bot->send(new Message($message['sender']['id'], 'Sorry. I don’t understand you.'));
+		            	$this->bot->send(new Message($message['sender']['id'], 'Sorry. I don’t understand you.'));
 		            }
 		        }
 		    }

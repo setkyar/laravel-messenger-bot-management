@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('/bot-conversation', 'ConversationController@conversation');
+Route::any('/webhook', 'ConversationController@conversation');
 
 use App\Answer;
 
