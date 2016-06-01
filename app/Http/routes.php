@@ -12,11 +12,13 @@
 */
 
 Route::get('/', function () {
-	// return Messenger::hello();
-
     return view('welcome');
 });
 
-Route::get('/test', function() {
-	return Messenger::hello();
+Route::any('/bot-conversation', 'ConversationController@conversation');
+
+use App\Answer;
+
+Route::get('/add', function() {
+	Answer::create(['command' => 'hi', 'answer' => 'hello', 'user_id' => 1]);
 });
