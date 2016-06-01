@@ -25,7 +25,7 @@ class Messenger
 		$this->bot = new FbBotApp($this->token);
 	}
 
-	public function reciveConversation() {
+	public function startConversation() {
 		if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == $this->verify_token) {
 			//if verification checking
 			echo $_REQUEST['hub_challenge'];

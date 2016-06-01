@@ -10,6 +10,6 @@ class ConversationController extends Controller
 {
     public function conversation()
     {
-    	
+    	return Messenger::startConversation();
     }
 }
