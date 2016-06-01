@@ -20,10 +20,10 @@ Route::any('/webhook', 'ConversationController@conversation');
 use App\Answer;
 
 Route::get('/add', function() {
-	// Answer::create(['command' => 'hi', 'answer' => 'hello', 'user_id' => 1]);
-	
+	Answer::truncate();
+
 	$data = [
-		// ['command' => 'hi', 'answer' => 'hello', 'user_id' => 1],
+		['command' => 'hi', 'answer' => 'hello', 'user_id' => 1],
 		['command' => 'how are you?', 'answer' => 'I am fine thanks. And you?', 'user_id' => 1],
 		['command' => 'i am fine too', 'answer' => 'Gland to hear that.', 'user_id' => 1],
 		['command' => 'i am sick', 'answer' => 'Health is the most important thing in the lief, please take care', 'user_id' => 1],
@@ -36,5 +36,5 @@ Route::get('/add', function() {
 		['command' => 'haha', 'answer' => 'It is funny?', 'user_id' => 1],
 	];
 
-	Answer::create($data);
+	Answer::insert($data);
 });
