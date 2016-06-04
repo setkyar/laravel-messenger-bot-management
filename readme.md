@@ -37,7 +37,7 @@ In this step https://guarded-dusk-21746.herokuapp.com/webhook/ will be https://y
 
  4. Go back to Terminal and type in this command to trigger the Facebbook app to send messages. Remember to use the token you requested earlier.
 
-    $ curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=<PAGE_ACCESS_TOKEN>"
+    $ curl -X POST "https://graph.facebook.com/v2.6/me/subscribed_apps?access_token=PAGE_ACCESS_TOKEN"
 
 ## Thanks
 

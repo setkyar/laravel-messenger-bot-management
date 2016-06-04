@@ -40,14 +40,14 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Manage FB Messenger Bot Q&A
+                    FB Messenger Bot Q&A
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/add-bot') }}">Add Bot</a></li>
+                    <li><a href="{{ url('/bots') }}">Bots</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
