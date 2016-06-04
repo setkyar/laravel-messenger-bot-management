@@ -1,5 +1,7 @@
 # Basic Q&A with Laravel for Facebook messenger bot
 
+This Project is currently Working In Progress(WIP)
+
 This is basic Facebook messenger chat bot with Laravel yeah. You saved questions and answer to the database. When user ask question from Messenger. It answer back with the answer you saved in the database. That's for now yeah. Will add many more new features soon ;)
 
 ## Installation & Usage
