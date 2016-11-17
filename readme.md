@@ -10,8 +10,8 @@ This is basic Facebook messenger chat bot with Laravel yeah. You saved questions
  -  Setup your domain. Your Domain Must be with https, you can setup with [let's encrypt](https://github.com/setkyar/laravel-messenger-bot-management#server)
  - [Setup Facebook App](https://github.com/setkyar/laravel-messenger-bot-management#setup-facebook-app)
  - Fill Database credentials  and Facebook verify_token and token(app/page_token) in Laravel's **.env**
- - Modify Q&A in `routes.php` . Already added some basic, you can check it out there and call that url in order to save questions and answers. URL is **`yourdomain.com/add`**
- - Chat with your Facebook page. Base on your Q&A of `routes.php`
+ - Modify Q&A in `database/seeds/QuestionsAndAnswerSeeder.php` Already added some basic, you can check it out there and run `php artisan migrate && php artisan db:seed`
+ - Chat with your Facebook page. Base on your `QuestionsAndAnswerSeeder`'s Q&A
 
 ## Basic Requirement
 
