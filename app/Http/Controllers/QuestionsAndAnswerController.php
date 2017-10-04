@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Answer;
 use App\Http\Requests;
+
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Exception;
 
 class QuestionsAndAnswerController extends Controller
 {
@@ -15,7 +18,8 @@ class QuestionsAndAnswerController extends Controller
      */
     public function index()
     {
-        return view('qna.index');
+        $Answers = Answer::all();
+        return view('qna.index',compact('Answers'));
     }
 
     /**
@@ -25,7 +29,7 @@ class QuestionsAndAnswerController extends Controller
      */
     public function create()
     {
-        //
+        return view('qna.create');
     }
 
     /**
@@ -36,7 +40,17 @@ class QuestionsAndAnswerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request, [
+            'command' => 'required|max:255',
+            'answer' => 'required|max:255',
+        ]);
+
+        try {
+             Answer::create($request->all());
+            return back()->with('flash_success','QNA Saved Successfully');
+        } catch (Exception $e) {
+            return back()->with('flash_error', 'QNA Not Found');
+        }
     }
 
     /**
@@ -81,6 +95,13 @@ class QuestionsAndAnswerController extends Controller
      */
     public function destroy($id)
     {
-        //
+         try {
+            Answer::find($id)->delete();
+            return back()->with('message', 'QNA deleted successfully');
+        } catch (ModelNotFoundException $e) {
+            return back()->with('flash_error', 'QNA Not Found');
+        } catch (Exception $e) {
+            return back()->with('flash_error', 'QNA Not Found');
+        }
     }
 }
