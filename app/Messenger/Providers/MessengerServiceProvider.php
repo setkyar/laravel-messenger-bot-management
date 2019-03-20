@@ -14,8 +14,7 @@ class MessengerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('messenger', function()
-        {
+        $this->app->bind('messenger', function () {
             return new Messenger();
         });
     }

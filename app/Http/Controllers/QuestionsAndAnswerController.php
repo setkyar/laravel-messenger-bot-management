@@ -19,7 +19,7 @@ class QuestionsAndAnswerController extends Controller
     public function index()
     {
         $Answers = Answer::all();
-        return view('qna.index',compact('Answers'));
+        return view('qna.index', compact('Answers'));
     }
 
     /**
@@ -43,11 +43,11 @@ class QuestionsAndAnswerController extends Controller
          $this->validate($request, [
             'command' => 'required|max:255',
             'answer' => 'required|max:255',
-        ]);
+         ]);
 
         try {
              Answer::create($request->all());
-            return back()->with('flash_success','QNA Saved Successfully');
+            return back()->with('flash_success', 'QNA Saved Successfully');
         } catch (Exception $e) {
             return back()->with('flash_error', 'QNA Not Found');
         }
@@ -95,7 +95,7 @@ class QuestionsAndAnswerController extends Controller
      */
     public function destroy($id)
     {
-         try {
+        try {
             Answer::find($id)->delete();
             return back()->with('message', 'QNA deleted successfully');
         } catch (ModelNotFoundException $e) {
